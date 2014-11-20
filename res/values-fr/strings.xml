@@ -1,9 +1,10 @@
 <resources>
 
-    <string name="prefs_threshold">Seuil:</string>
-    <string name="prefs_threshold_description">Un multiple de 9,81 m/s^2 que la somme de toutes les accélérations non-gravitationnelles sur l\'appareil doit dépasser pour le verrouiller.</string>
-    <string name="prefs_enable_device_admin">Permettre admin d\'appareil</string>
-    <string name="prefs_enable_device_admin_description">Doit être permis pour le fonctionnement de l\'application. Désactiver avant de la désinstallation.</string>
-    <string name="too_low">Ce seuil est trop bas.</string>
+    <string name="threshold">Seuil:</string>
+
+    <string name="threshold_description">Un multiple de 9,81 m/s^2 que la somme de toutes les accélérations non-gravitationnelles sur l\'appareil doit dépasser pour le verrouiller.</string>
+    <string name="enable_device_admin">Permettre admin d\'appareil</string>
+    <string name="enable_device_admin_description">Doit être permis pour le fonctionnement de l\'application. Désactiver avant de la désinstallation.</string>
+    <string name="threshold_too_low">Ce seuil est trop bas.</string>
     <string name="failed_to_lock">PluckLock voulait verrouiller l\'appareil, mais \"admin d\'appareil\" est désactivé. Il faut l\'activer aux préférences.</string>
 </resources>

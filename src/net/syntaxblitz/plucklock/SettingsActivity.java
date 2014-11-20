@@ -33,7 +33,7 @@ public class SettingsActivity extends Activity {
 		final SharedPreferences.Editor editor = prefs.edit();
 
 		final EditText thresholdEdit = (EditText) this
-				.findViewById(R.id.pref_threshold_edit);
+				.findViewById(R.id.threshold_value);
 		thresholdEdit.setText("" + prefs.getFloat("threshold_pref_key", 1));
 		thresholdEdit.addTextChangedListener(new TextWatcher() {
 			@Override
@@ -52,7 +52,7 @@ public class SettingsActivity extends Activity {
 					float newVal = Float.valueOf(s.toString());
 					if (newVal < .15) { 
 						thresholdEdit.setBackgroundColor(getResources().getColor(R.color.red_500));
-						Toast.makeText(getBaseContext(), getResources().getString(R.string.too_low), Toast.LENGTH_SHORT).show();
+						Toast.makeText(getBaseContext(), getResources().getString(R.string.threshold_too_low), Toast.LENGTH_SHORT).show();
 					} else {
 						thresholdEdit.setBackgroundColor(getResources().getColor(R.color.grey_200));
 						editor.putFloat("threshold_pref_key", newVal);
@@ -74,7 +74,7 @@ public class SettingsActivity extends Activity {
 		}
 		
 		final DevicePolicyManager dpm = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-		final CheckBox deviceManagerCheck = (CheckBox) findViewById(R.id.checkBox1);
+		final CheckBox deviceManagerCheck = (CheckBox) findViewById(R.id.enable_device_admin);
 		deviceManagerCheck.setChecked(dpm.isAdminActive(adminComponent));
 		
 		deviceManagerCheck.setOnCheckedChangeListener(new OnCheckedChangeListener() {
