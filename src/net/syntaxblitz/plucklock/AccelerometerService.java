@@ -53,8 +53,8 @@ public class AccelerometerService extends Service {
 				
 				try {
 					threshold = prefs.getFloat("threshold_pref_key", 1);
-					if (threshold < .15) {	// only possible pre-update.
-						threshold = 1;
+					if (threshold < .5) {	// only possible pre-update.
+						threshold = 2;
 						prefs.edit().putFloat("threshold_pref_key", threshold).commit();
 					}
 				} catch (ClassCastException e) {

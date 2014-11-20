@@ -6,6 +6,6 @@
     <string name="enable_device_admin">Add PluckLock to device admininstrators</string>
     <string name="enable_device_admin_description">Must be checked for app to function. Uncheck this before uninstalling.</string>
     <string name="threshold_too_low">That threshold is too low. Trust me.</string>
-    <string name="threshold_too_high">Don\'t be a fool! Nobody human is this strong!</string>
+    <string name="threshold_too_high">Don\'t be a fool! No human is this strong!</string>
 	<string name="failed_to_lock">PluckLock was about to lock your device, but PluckLock must be device administrator to do this. Add PluckLock to the device administrators in the device settings or in the app otions.</string>
 </resources>
