@@ -50,16 +50,17 @@ public class SettingsActivity extends Activity {
 					int count) {
 				try {
 					float newVal = Float.valueOf(s.toString());
-					if (newVal < .15) { 
-						thresholdEdit.setBackgroundColor(getResources().getColor(R.color.red_500));
+					if (newVal < .5) { 
 						Toast.makeText(getBaseContext(), getResources().getString(R.string.threshold_too_low), Toast.LENGTH_SHORT).show();
-					} else {
-						thresholdEdit.setBackgroundColor(getResources().getColor(R.color.grey_200));
+					}
+					if (newVal > 10) {
+						Toast.makeText(getBaseContext(), getResources().getString(R.string.threshold_too_high), Toast.LENGTH_SHORT).show();
+					}
+					else {
 						editor.putFloat("threshold_pref_key", newVal);
 						editor.commit();
 					}
 				} catch (NumberFormatException e) {
-					thresholdEdit.setBackgroundColor(getResources().getColor(R.color.red_500));
 				}
 			}
 		});

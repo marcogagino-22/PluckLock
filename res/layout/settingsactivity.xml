@@ -14,38 +14,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/threshold"
+        android:gravity="center_vertical"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <EditText
         android:id="@+id/threshold_value"
-        android:layout_width="100dip"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/threshold_text"
-        android:layout_toEndOf="@+id/threshold_text"
-        android:layout_marginLeft="10sp"
+		android:layout_toRightOf="@+id/threshold_text"
+		android:layout_toEndOf="@+id/threshold_text"
         android:ems="10"
-        android:inputType="number|numberDecimal" />
-    
-    <Button
-	    android:id="@+id/threshold_set_button"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/threshold_value"
-        android:layout_alignBottom="@+id/threshold_value"
-        android:layout_toRightOf="@+id/threshold_value"
-        android:layout_toEndOf="@+id/threshold_value"
-	    android:text="@string/threshold_button" />
+		android:layout_marginLeft="10sp"
+        android:gravity="center_vertical"
+        android:inputType="number|numberDecimal" />    
 
 	<TextView
 	    android:id="@+id/threshold_description"
-	    android:layout_below="@+id/threshold_value"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/threshold_value"
 	    android:text="@string/threshold_description" />
+	
+	<TextView
+        android:id="@+id/device_admin_text"
+        android:layout_marginTop="15sp"
+        android:layout_below="@+id/threshold_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/admin_settings"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	<CheckBox
         android:id="@+id/enable_device_admin"
-        android:layout_below="@+id/threshold_description"
+        android:layout_below="@+id/device_admin_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/enable_device_admin" />
@@ -57,5 +59,6 @@
 	    android:layout_height="wrap_content"
 	    android:text="@string/enable_device_admin_description"
 	    android:textAppearance="?android:attr/textAppearanceSmall" />
+
 
 </RelativeLayout>
