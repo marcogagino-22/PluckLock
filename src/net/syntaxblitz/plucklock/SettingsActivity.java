@@ -25,13 +25,6 @@ public class SettingsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settingsactivity);
 
-		// API < 10
-		setTheme(android.R.style.Theme);
-		// API > 11
-		setTheme(android.R.style.Theme_Holo);
-		// API > 14
-		setTheme(android.R.style.Theme_DeviceDefault);
-
 		Intent accelerometerIntent = new Intent(getBaseContext(),
 				AccelerometerService.class);
 		getBaseContext().startService(accelerometerIntent);
@@ -58,15 +51,15 @@ public class SettingsActivity extends Activity {
 				try {
 					float newVal = Float.valueOf(s.toString());
 					if (newVal < .15) { 
-						thresholdEdit.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+						thresholdEdit.setBackgroundColor(getResources().getColor(R.color.red_500));
 						Toast.makeText(getBaseContext(), getResources().getString(R.string.too_low), Toast.LENGTH_SHORT).show();
 					} else {
-						thresholdEdit.setBackgroundColor(getResources().getColor(android.R.color.white));
+						thresholdEdit.setBackgroundColor(getResources().getColor(R.color.grey_200));
 						editor.putFloat("threshold_pref_key", newVal);
 						editor.commit();
 					}
 				} catch (NumberFormatException e) {
-					thresholdEdit.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+					thresholdEdit.setBackgroundColor(getResources().getColor(R.color.red_500));
 				}
 			}
 		});

@@ -3,7 +3,9 @@ package net.syntaxblitz.plucklock;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+
+//never been used by the owner
+//import android.util.Log;
 
 public class AutostartReceiver extends BroadcastReceiver {
 
