@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">PluckLock</string>
-    <string name="threshold">Threshold:</string>
+    
     <string name="admin_settings">Admin Settings</string>
-    <string name="threshold_description">A value, in terms of g (9.81 m/s^2), that the sum of all non-gravitational accelerations on the device must exceed for it to lock.</string>
     <string name="enable_device_admin">Add PluckLock to device admininstrators</string>
-    <string name="enable_device_admin_description">Must be checked for app to function. Uncheck this before uninstalling.</string>
+    <string name="enable_device_admin_ON">Uncheck this before uninstalling.</string>
+    <string name="enable_device_admin_OFF">Gives LockScreen admin permissions.\nMust be checked for app to function.</string>
+    
+    <string name="threshold">Threshold:</string>
+    <string name="threshold_description">A value, in terms of g (9.81 m/s^2), that the sum of all non-gravitational accelerations on the device must exceed for it to lock.</string>
     <string name="threshold_too_low">That threshold is too low. Trust me.</string>
     <string name="threshold_too_high">Don\'t be a fool! No human is this strong!</string>
+	
 	<string name="failed_to_lock">PluckLock was about to lock your device, but PluckLock must be device administrator to do this. Add PluckLock to the device administrators in the device settings or in the app otions.</string>
 </resources>

@@ -1,11 +1,15 @@
 <resources>
     
-    <string name="threshold">Soglia:</string>
+    
     <string name="admin_settings">Impostazioni d\'amministratore</string>
-    <string name="threshold_description">Un multiplo di g (9.81 m/s^2). Quando tutte le accelerazioni non gravitazionali applicate al dispositivo superano questa soglia, il dispositivo si blocca.</string>
     <string name="enable_device_admin">Aggiungi PluckLock agli amministratori del dispositivo</string>
-    <string name="enable_device_admin_description">L\'opzione dev\'essere spuntata per permettere all\'app di funzionare. Deselezionala prima di disinstallare PluckLock.</string>
+    <string name="enable_device_admin_ON">Disattiva questa opzione prima di disinstallare LockScreen.</string>
+    <string name="enable_device_admin_OFF">Da a LockScreen i permessi di amministratore. L\'opzione dev\'essere attivata per permettere all\'app di funzionare.</string>
+    
+    <string name="threshold">Soglia:</string>
+    <string name="threshold_description">Un multiplo di g (9.81 m/s^2). Quando tutte le accelerazioni non gravitazionali applicate al dispositivo superano questa soglia, il dispositivo si blocca.</string>
     <string name="threshold_too_low">La soglia è troppo bassa. Fidati.</string>
     <string name="threshold_too_high">Non scherzare! Nessun essere umano è così forte!</string>
+	
 	<string name="failed_to_lock">PluckLock stava per bloccare il dispositivo, ma l\'app dev\'essere amministratore di dispositivo per poterlo fare. Aggiungi PluckLock to the device administrators nelle impostazioni del dispositivo o dalle opzioni dell\'app.</string>
 </resources>

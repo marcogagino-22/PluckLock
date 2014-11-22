@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SettingsActivity extends Activity {
@@ -76,8 +77,9 @@ public class SettingsActivity extends Activity {
 		
 		final DevicePolicyManager dpm = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
 		final CheckBox deviceManagerCheck = (CheckBox) findViewById(R.id.enable_device_admin);
-		deviceManagerCheck.setChecked(dpm.isAdminActive(adminComponent));
+		final TextView enable_device_admin_description = (TextView) findViewById(R.id.enable_device_admin_description);
 		
+		deviceManagerCheck.setChecked(dpm.isAdminActive(adminComponent));
 		deviceManagerCheck.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton button, boolean isChecked) {
@@ -85,11 +87,25 @@ public class SettingsActivity extends Activity {
 					Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
 					intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, adminComponent);
 					startActivity(intent);
+					enable_device_admin_description.setText(R.string.enable_device_admin_ON);
 				} else {
 					editor.putBoolean("has_disabled_device_admin", true).commit();
 					dpm.removeActiveAdmin(adminComponent);
+					enable_device_admin_description.setText(R.string.enable_device_admin_OFF);
 				}
 			}
 		});
+		// for first time, when there is no change in the state of the checkbox
+		if (deviceManagerCheck.isChecked()) {
+			Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+			intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, adminComponent);
+			startActivity(intent);
+			enable_device_admin_description.setText(R.string.enable_device_admin_ON);	
+			}
+		else {
+			editor.putBoolean("has_disabled_device_admin", true).commit();
+			dpm.removeActiveAdmin(adminComponent);
+			enable_device_admin_description.setText(R.string.enable_device_admin_OFF);
+			}
 	}
 }
